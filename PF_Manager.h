@@ -20,6 +20,7 @@
 #define MAX_OPEN_FILE 50
 
 typedef unsigned int PageNum;
+extern PF_FileHandle * open_list;
 
 typedef struct{
 	PageNum pageNum;

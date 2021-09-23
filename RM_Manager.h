@@ -33,11 +33,13 @@ typedef struct
 typedef struct __RM_FileHandle {//文件句柄
 	bool bOpen;//句柄是否打开（是否正在被使用）
 	//TODO: 需要自定义其内部结构
-	__RM_FileHandle() 
-	{
-		bOpen = false;
-		// TODO: 添加需要初始话代码
-	}
+	char *fileName;			//与该句柄关联的文件名
+	int	  fileID;			//该文件关联的ID
+	Frame *pHdrFrame;		//指向该文件头帧（记录文件控制页对应的帧）的指针
+	Page  *pHdrPage;		//指向该文件头页（记录文件控制页）的指针
+	char  *pBitmap;			//指向记录文件控制页中位图的指针
+	RM_FileSubHeader *fileSubHeader;	//记录文件的总体数量/结构信息
+
 
 }RM_FileHandle;
 
@@ -59,6 +61,12 @@ typedef struct __RM_FileScan {
 
 }RM_FileScan;
 
+typedef struct {
+	int nRecords;			//当前文件中包含的记录数
+	int recordSize;			//每个记录的大小
+	int recordsPerPage;		//每个页面可以装载的记录数量
+	int firstRecordOffset;	//每页第一个记录在数据区中的开始位置
+} RM_FileSubHeader;
 
 
 RC GetNextRec(RM_FileScan *rmFileScan, RM_Record *rec);

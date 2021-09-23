@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2010
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1684
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hustbase", "hustbase.vcxproj", "{823021B3-0163-4118-9D76-8171467D9F2C}"
 EndProject
 Global
@@ -11,8 +13,8 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{823021B3-0163-4118-9D76-8171467D9F2C}.Debug|x64.ActiveCfg = Debug|Win32
-		{823021B3-0163-4118-9D76-8171467D9F2C}.Debug|x64.Build.0 = Debug|Win32
+		{823021B3-0163-4118-9D76-8171467D9F2C}.Debug|x64.ActiveCfg = Debug|x64
+		{823021B3-0163-4118-9D76-8171467D9F2C}.Debug|x64.Build.0 = Debug|x64
 		{823021B3-0163-4118-9D76-8171467D9F2C}.Debug|x86.ActiveCfg = Debug|Win32
 		{823021B3-0163-4118-9D76-8171467D9F2C}.Debug|x86.Build.0 = Debug|Win32
 		{823021B3-0163-4118-9D76-8171467D9F2C}.Release|x64.ActiveCfg = Release|x64
