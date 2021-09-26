@@ -381,3 +381,12 @@ const RC GetPageCount(int FileID, int *pageCount)
 	*pageCount=open_list[FileID]->pFileSubHeader->pageCount;
 	return SUCCESS;
 }
+
+const RC GetFileHandle(int FileID, PF_FileHandle **fileHandle) {
+	if (FileID < 0 || FileID >= MAX_OPEN_FILE)
+		return PF_ILLEGAL_FILE_ID;
+	if (!open_list[FileID])
+		return PF_ILLEGAL_FILE_ID;
+	*fileHandle = open_list[FileID];
+	return SUCCESS;
+}

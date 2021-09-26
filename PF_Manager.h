@@ -20,7 +20,6 @@
 #define MAX_OPEN_FILE 50
 
 typedef unsigned int PageNum;
-extern PF_FileHandle * open_list;
 
 typedef struct{
 	PageNum pageNum;
@@ -88,5 +87,7 @@ const RC MarkDirty(PF_PageHandle *pageHandle);
 const RC UnpinPage(PF_PageHandle *pageHandle);
 
 const RC GetPageCount(int FileID, int *pageCount);
+
+const RC GetFileHandle(int FileID, PF_FileHandle **fileHandle);
 
 #endif
